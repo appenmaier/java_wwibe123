@@ -1,7 +1,5 @@
 package main;
 
-import model.Printer;
-
 /**
  * Demo 1: Syntax und Kommentare
  * 
@@ -15,12 +13,6 @@ public class D01_SyntaxAndComments {
         
         /* Ausgabe */
         System.out.println(text);
-
-        Printer.printText("Winter");
-        Printer.printText("is");
-        Printer.printText("Coming");
-        Printer.printHelloWorld();
-        Printer.printHelloWorld();
     }
 
 }
