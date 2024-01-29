@@ -1,6 +1,7 @@
 package main;
 
 import model.Printer;
+import model.Calculator;
 
 /**
  * Demo 2: Statische Methoden
@@ -15,7 +16,11 @@ public class D02_StaticMethods {
         Printer.printText("is");
         Printer.printText("Coming");
         Printer.printHelloWorld();
-        Printer.printHelloWorld();        
+        Printer.printHelloWorld();
+        
+        int result = Calculator.add(4, 3);
+        System.out.println(result);
+        System.out.println(Calculator.subtract(5, 8));
     }
     
 }
