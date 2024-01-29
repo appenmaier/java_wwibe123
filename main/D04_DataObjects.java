@@ -1,12 +1,15 @@
 package main;
 
 /**
- * Variable Datenobjekte
+ * Datenobjekte
  * 
  * @author Daniel Appenmaier
  * @version 1.0
  */
 public class D04_DataObjects {
+    
+    /* Deklaration fixer Datenobjekte */
+    final static double PI = 3.14159265359;
 
     public static void main(String[] args) {    
 
@@ -25,9 +28,7 @@ public class D04_DataObjects {
         isHappy = true;
         sizeInM = 1.79;
         
-        char gender1 = 'M', gender2 = 'W';
-        
-        System.out.println(i);
+        char gender1 = 'M', gender2 = 'W';        
     }
     
 }
