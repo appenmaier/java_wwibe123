@@ -46,6 +46,13 @@ public class D07_ArithmeticOperators {
         c -= 1;
         c--;
         System.out.println("c: " + c);
+        
+        /* Teilen durch Null */        
+        // System.out.println(a / 0); // ArithmeticException
+        System.out.println(a / 0.0); // Infinity
+        System.out.println(a / -0.0); // -Infinity
+        System.out.println(0 / 0.0); // NaN
+        System.out.println(0 / -0.0); // NaN
     }
     
 }
