@@ -42,6 +42,15 @@ public class D11_IfCases {
         if (name.equals("Daniel")) {
             System.out.println("Cooler Name");
         }
+        
+        /* Kurzschlussauswertung (Lazy Evaluation) */
+        boolean boolean1 = true;
+        int int1 = 5;
+        
+        if (boolean1 == true && (int1 += 1) > 5) {
+        }
+        
+        System.out.println("int1: " + int1);
     }
     
 }
