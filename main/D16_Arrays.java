@@ -32,6 +32,13 @@ public class D16_Arrays {
             int number = numbers[i];
             System.out.println(number);
         }
+        
+        System.out.println();
+        
+        for(int i = numbers.length - 1; i >= 0; i--) {
+            int number = numbers[i];
+            System.out.println(number);    
+        }
 
     }
     
