@@ -1,6 +1,8 @@
 package main;
 
 import java.util.ArrayList;
+import model.LightBulb;
+import model.TableLamp;
 
 /**
  * Imperatives und Objektorientiertes Programmieren
@@ -42,6 +44,18 @@ public class D19_ImperativeAndObjectOrientiedProgramming {
         } else {
             System.out.println("Die Lampe leuchtet nicht");
         }
+        
+        /* Tischleuchte (objektorientiert) */
+        LightBulb blueLightBulb = new LightBulb();
+        blueLightBulb.color = "blau";
+        
+        TableLamp tableLamp1 = new TableLamp();
+        tableLamp1.changeLightBulb(blueLightBulb);
+        tableLamp1.plugIn();
+        tableLamp1.switchOn();
+        System.out.println(tableLamp1.toString());
+        tableLamp1.pullThePlug();
+        System.out.println(tableLamp1.toString());
         
         /* Felder (imperativ) */
         String[] names = new String[3];
