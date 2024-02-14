@@ -5,15 +5,21 @@ package model;
  * Tischleuchte
  * 
  * @author Daniel Appenmaier 
- * @version 1.0
+ * @version 2.0
  */
 public class TableLamp {
 
     /* Attribute */
-    public boolean isShining;
-    public boolean isConnected;
-    public boolean isOn;
-    public LightBulb lightBulb;
+    /* version 1.0:
+     * public boolean isShining;
+     * public boolean isConnected;
+     * public boolean isOn;
+     * public LightBulb lightBulb;
+     */
+    private boolean isShining;
+    private boolean isConnected;
+    private boolean isOn;
+    private LightBulb lightBulb;
 
     /* Methoden */
     /**
@@ -70,8 +76,10 @@ public class TableLamp {
      * @return alle Attribute der Tischleuchte als Zeichenkette
      */
     public String toString() {
-        return "TableLamp [isShining=" + isShining + ", isOn=" + isOn + ", isConnected="
-               + isConnected + ", lightBulb.color=" + lightBulb.color + "]";
+        return "TableLamp [isShining=" + isShining
+            + ", isOn=" + isOn
+            + ", isConnected=" + isConnected
+            + ", lightBulb.color=" + lightBulb.color + "]";
     }
     
 }
