@@ -79,7 +79,7 @@ public class TableLamp {
         return "TableLamp [isShining=" + isShining
             + ", isOn=" + isOn
             + ", isConnected=" + isConnected
-            + ", lightBulb.color=" + lightBulb.color + "]";
+            + ", lightBulb.color=" + lightBulb.getColor() + "]";
     }
     
 }

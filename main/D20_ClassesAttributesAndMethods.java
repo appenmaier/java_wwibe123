@@ -7,14 +7,15 @@ import model.TableLamp;
  * Klassen, Attribute und Methoden
  * 
  * @author Daniel Appenmaier
- * @version 1.0
+ * @version 2.0
  */
 public class D20_ClassesAttributesAndMethods {
 
     public static void main(String[] args) {
         
         LightBulb blueLightBulb = new LightBulb();
-        blueLightBulb.color = "blau";
+        blueLightBulb.setColor("blau");
+        /* version 1.0: blueLightBulb.color = "blau"; */
         
         TableLamp tableLamp1 = new TableLamp();
         // tableLamp1.isOn = false;
