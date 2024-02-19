@@ -5,7 +5,7 @@ package model;
  * Tischleuchte
  * 
  * @author Daniel Appenmaier 
- * @version 4.0
+ * @version 5.0
  */
 public class TableLamp {
 
@@ -16,20 +16,27 @@ public class TableLamp {
     private LightBulb lightBulb;
     // version 1.0: public boolean isShining; public boolean isConnected; public boolean isOn;
     // public LightBulb lightBulb;
+    
+    public final static String TYPE = "Tischleuchte";
+    private static int numberOfTableLamps;
+    // version 4.0: -
 
     /* Methoden */
     public TableLamp() {
         lightBulb = new LightBulb();
+        numberOfTableLamps++;
     }
     // version 3.0: -
     
     public TableLamp(String lightBulbColor) {
         lightBulb = new LightBulb(lightBulbColor);
+        numberOfTableLamps++;
     }
     // version 3.0: -
     
     public TableLamp(LightBulb lightBulb) {
         this.lightBulb = lightBulb;
+        numberOfTableLamps++;
     }
     // version 3.0: -
     
@@ -109,5 +116,10 @@ public class TableLamp {
         return isEqual;
     }
     // version 2.0: -
+    
+    public static int getNumberOfTableLamps() {
+        return numberOfTableLamps;
+    }
+    // version 4.0: -
     
 }

@@ -31,7 +31,7 @@ public class D22_ConstructorsAndOverloadedMethods {
             lamp.plugIn();
             lamp.switchOn();
             System.out.println(lamp);
-        }
+        }        
         
     }
     
