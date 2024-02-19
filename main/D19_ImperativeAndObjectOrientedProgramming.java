@@ -8,7 +8,7 @@ import model.TableLamp;
  * Imperatives und objektorientiertes Programmieren
  * 
  * @author Daniel Appenmaier
- * @version 2.0
+ * @version 3.0
  */
 public class D19_ImperativeAndObjectOrientedProgramming {
 
@@ -46,9 +46,9 @@ public class D19_ImperativeAndObjectOrientedProgramming {
         }
         
         /* Tischleuchte (objektorientiert) */
-        LightBulb blueLightBulb = new LightBulb();
-        blueLightBulb.setColor("blau");
-        /* version 1.0: blueLightBulb.color = "blau"; */
+        LightBulb blueLightBulb = new LightBulb("blau");
+        // version 2.0: LightBulb blueLightBulb = new LightBulb(); blueLightBulb.setColor("blau");
+        // version 1.0: blueLightBulb.color = "blau";
         
         TableLamp tableLamp1 = new TableLamp();
         tableLamp1.changeLightBulb(blueLightBulb);

@@ -5,23 +5,41 @@ package model;
  * Gluehbirne
  * 
  * @author Daniel Appenmaier
- * @version 2.0
+ * @version 4.0
  */
 public class LightBulb {
     
     /* Attribute */
-    /* version 1.0: public String color; */
-    private String color;
+    private final String color;
+    // version 1.0: public String color;
+    // version 3.0: private String color;
     
     /* Methoden */
-    public void setColor(String c) {
-        color = c;
+    public LightBulb(String color) {
+        this.color = color;
     }
-    /* version 1.0: - */
+    // version 3.0: public void setColor(String c) { color = c; }
+    // version 1.0: - */
+    
+    public LightBulb() {
+        color = "weiss";
+    }
+    // version 3.0: -
     
     public String getColor() {
         return color;
     }
-    /* version 1.0: - */
+    // version 1.0: -
     
+    public String toString() {
+        return "LightBulb [color=" + color + "]";
+    }
+    // version 2.0: -
+    
+    public boolean equals(LightBulb other) {
+        boolean isEqual = (other.color == color) ? true : false;
+        return isEqual;
+    }
+    // version 2.0: -
+
 }

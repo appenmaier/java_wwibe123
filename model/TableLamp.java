@@ -5,23 +5,34 @@ package model;
  * Tischleuchte
  * 
  * @author Daniel Appenmaier 
- * @version 2.0
+ * @version 4.0
  */
 public class TableLamp {
 
     /* Attribute */
-    /* version 1.0:
-     * public boolean isShining;
-     * public boolean isConnected;
-     * public boolean isOn;
-     * public LightBulb lightBulb;
-     */
     private boolean isShining;
     private boolean isConnected;
     private boolean isOn;
     private LightBulb lightBulb;
+    // version 1.0: public boolean isShining; public boolean isConnected; public boolean isOn;
+    // public LightBulb lightBulb;
 
     /* Methoden */
+    public TableLamp() {
+        lightBulb = new LightBulb();
+    }
+    // version 3.0: -
+    
+    public TableLamp(String lightBulbColor) {
+        lightBulb = new LightBulb(lightBulbColor);
+    }
+    // version 3.0: -
+    
+    public TableLamp(LightBulb lightBulb) {
+        this.lightBulb = lightBulb;
+    }
+    // version 3.0: -
+    
     /**
      * Tischleuchte eingestecken
      */
@@ -79,7 +90,24 @@ public class TableLamp {
         return "TableLamp [isShining=" + isShining
             + ", isOn=" + isOn
             + ", isConnected=" + isConnected
-            + ", lightBulb.color=" + lightBulb.getColor() + "]";
+            + ", lightBulb=" + lightBulb + "]";
     }
+    // version 2.0: public String toString() { return "TableLamp [isShining=" + isShining + ", isOn="
+    // + isOn + ", isConnected=" + isConnected + ", lightBulb.color=" + lightBulb.getColor() + "]"; }
+    
+    /**
+     * Prueft, ob die Tischleuchte zur eingehenden Tischleuchte gleich ist
+     * 
+     * @param other eingehende Tischleuchte
+     * @return true = gleich, false = ungleich
+     */
+    public boolean equals(TableLamp other) {
+        boolean isEqual = (other.isShining == isShining &&
+                           other.isConnected == isConnected &&
+                           other.isOn == isOn &&
+                           other.lightBulb.equals(lightBulb)) ? true : false;
+        return isEqual;
+    }
+    // version 2.0: -
     
 }
