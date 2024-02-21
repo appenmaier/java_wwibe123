@@ -4,12 +4,12 @@ import java.util.Scanner;
 import java.util.Random;
 
 /**
- * Wiederholung
+ * Wiederholung: Scanner, Verzweigungen, Arithmetische Operationen
  * 
  * @author Daniel Appenmaier
  * @version 1.0
  */
-public class W01 {
+public class R01 {
 
     public static void main(String[] args) {
         
