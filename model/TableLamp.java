@@ -5,7 +5,7 @@ package model;
  * Tischleuchte
  * 
  * @author Daniel Appenmaier 
- * @version 5.0
+ * @version 6.0
  */
 public class TableLamp {
 
@@ -16,6 +16,8 @@ public class TableLamp {
     private LightBulb lightBulb;
     // version 1.0: public boolean isShining; public boolean isConnected; public boolean isOn;
     // public LightBulb lightBulb;
+    private PlugType plugType;
+    // version 5.0: -
     
     public final static String TYPE = "Tischleuchte";
     private static int numberOfTableLamps;
@@ -24,21 +26,30 @@ public class TableLamp {
     /* Methoden */
     public TableLamp() {
         lightBulb = new LightBulb();
+        plugType = new PlugType("Typ-F (Schukostecker)", "CEE 7/4", "Europa");
         numberOfTableLamps++;
     }
     // version 3.0: -
     
     public TableLamp(String lightBulbColor) {
         lightBulb = new LightBulb(lightBulbColor);
+        plugType = new PlugType("Typ-F (Schukostecker)", "CEE 7/4", "Europa");
         numberOfTableLamps++;
     }
     // version 3.0: -
     
     public TableLamp(LightBulb lightBulb) {
         this.lightBulb = lightBulb;
+        plugType = new PlugType("Typ-F (Schukostecker)", "CEE 7/4", "Europa");
         numberOfTableLamps++;
     }
     // version 3.0: -
+    
+    public TableLamp(PlugType plugType) {
+        lightBulb = new LightBulb();
+        this.plugType = plugType;
+    }
+    // version 5.0: -
     
     /**
      * Tischleuchte eingestecken
@@ -121,5 +132,10 @@ public class TableLamp {
         return numberOfTableLamps;
     }
     // version 4.0: -
+    
+    public PlugType getPlugType() {
+        return plugType;
+    }
+    // version 5.0: -
     
 }
