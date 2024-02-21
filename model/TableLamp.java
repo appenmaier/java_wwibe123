@@ -26,21 +26,21 @@ public class TableLamp {
     /* Methoden */
     public TableLamp() {
         lightBulb = new LightBulb();
-        plugType = new PlugType("Typ-F (Schukostecker)", "CEE 7/4", "Europa");
+        plugType = PlugType.TYPE_F;
         numberOfTableLamps++;
     }
     // version 3.0: -
     
     public TableLamp(String lightBulbColor) {
         lightBulb = new LightBulb(lightBulbColor);
-        plugType = new PlugType("Typ-F (Schukostecker)", "CEE 7/4", "Europa");
+        plugType = PlugType.TYPE_F;
         numberOfTableLamps++;
     }
     // version 3.0: -
     
     public TableLamp(LightBulb lightBulb) {
         this.lightBulb = lightBulb;
-        plugType = new PlugType("Typ-F (Schukostecker)", "CEE 7/4", "Europa");
+        plugType = PlugType.TYPE_F;
         numberOfTableLamps++;
     }
     // version 3.0: -
