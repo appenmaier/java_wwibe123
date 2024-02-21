@@ -22,7 +22,7 @@ public class D25_Files {
         String pathAbsolute = "C:\\Users\\D054906\\git\\java_wwibe123\\resources\\persons.txt"; // absolut
         String pathRelative = "resources/persons.txt"; // relativ
         
-        /* Systemeigeschaften */
+        /* Systemeigenschaften */
         String fileSeparator = System.getProperty("file.separator");
         System.out.println("fileSeparator: " + fileSeparator);
         String userHomeDirectory = System.getProperty("user.home");
