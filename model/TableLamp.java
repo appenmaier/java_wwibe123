@@ -5,17 +5,19 @@ package model;
  * Tischleuchte
  * 
  * @author Daniel Appenmaier 
- * @version 6.0
+ * @version 7.0
  */
-public class TableLamp {
+public class TableLamp extends Light {
 
     /* Attribute */
-    private boolean isShining;
     private boolean isConnected;
-    private boolean isOn;
     private LightBulb lightBulb;
-    // version 1.0: public boolean isShining; public boolean isConnected; public boolean isOn;
-    // public LightBulb lightBulb;
+    // version 1.0: public boolean isShining;
+    // version 1.0: public boolean isConnected;
+    // version 1.0: public boolean isOn;
+    // version 1.0: public LightBulb lightBulb;
+    // version 6.0: private boolean isShining;
+    // version 6.0: private boolean isOn;
     private PlugType plugType;
     // version 5.0: -
     
@@ -72,6 +74,7 @@ public class TableLamp {
     /**
      * Tischleuchte einschalten
      */
+    @Override
     public void switchOn() {
         isOn = true;
         if(isConnected && lightBulb != null) {
@@ -79,13 +82,11 @@ public class TableLamp {
         }
     }
     
-    /**
-     * Tischleuchte ausschalten
-     */
-    public void switchOff() {
-        isOn = false;
-        isShining = false;
-    }
+    // version 6.0:
+    // public void switchOff() {
+    // isOn = false;
+    // isShining = false;
+    // }
     
     /**
      * Gluehbirne wechseln
@@ -104,13 +105,15 @@ public class TableLamp {
      * 
      * @return alle Attribute der Tischleuchte als Zeichenkette
      */
+    @Override
     public String toString() {
         return "TableLamp [isShining=" + isShining
             + ", isOn=" + isOn
             + ", isConnected=" + isConnected
             + ", lightBulb=" + lightBulb + "]";
     }
-    // version 2.0: public String toString() { return "TableLamp [isShining=" + isShining + ", isOn="
+    // version 2.0: public String toString() {
+    // return "TableLamp [isShining=" + isShining + ", isOn="
     // + isOn + ", isConnected=" + isConnected + ", lightBulb.color=" + lightBulb.getColor() + "]"; }
     
     /**
