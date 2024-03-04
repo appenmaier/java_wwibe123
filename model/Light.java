@@ -23,6 +23,7 @@ public class Light {
         isShining = false;
     }
     
+    @Override
     public String toString() {
         return "Light [isOn=" + isOn + ", isShining=" + isShining + "]";
     }

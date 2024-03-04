@@ -41,15 +41,24 @@ public class D28_InheritanceAndPolymorphism {
         
         /* Mit Vererbung */
         ArrayList<Light> lights = new ArrayList<>();
-        lights.add(flashLight1);
-        lights.add(flashLight1);
-        lights.add(tableLamp1);
-        lights.add(tableLamp2);
+        Light light = flashLight1; // Upast
+        lights.add(light);
+        lights.add(flashLight2); // Upcast
+        lights.add(tableLamp1); // Upcast
+        lights.add(tableLamp2); // Upcast
         
+        // Dynamische Polymorphie
         for(Light l : lights) {
             l.switchOn();
+            if(l instanceof TableLamp) {
+                TableLamp t = (TableLamp) l; // Downcast (bis Java 16)
+                t.plugIn();
+            } else if(l instanceof FlashLight f) { // Downcast (seit Java 16)
+                f.changeBattery(new Battery());
+            }
             System.out.println(l);
-        }
+            System.out.println(l.hashCode());
+        }   
         
     }
     

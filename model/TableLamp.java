@@ -1,11 +1,12 @@
 package model;
 
+import java.util.Objects;
 
 /**
  * Tischleuchte
  * 
  * @author Daniel Appenmaier 
- * @version 7.0
+ * @version 8.0
  */
 public class TableLamp extends Light {
 
@@ -130,6 +131,12 @@ public class TableLamp extends Light {
         return isEqual;
     }
     // version 2.0: -
+    
+    @Override
+    public int hashCode() {
+        return Objects.hash(isOn, isShining, isConnected);
+    }
+    //version 7.0: - 
     
     public static int getNumberOfTableLamps() {
         return numberOfTableLamps;

@@ -24,6 +24,7 @@ public class Battery {
         return energyLevel;
     }
     
+    @Override
     public String toString() {
         return "Battery [energyLevel=" + energyLevel + "]";
     }
