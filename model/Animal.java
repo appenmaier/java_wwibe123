@@ -1,6 +1,8 @@
 package model;
 
 import java.util.ArrayList;
+import java.time.LocalDate;
+import model.Color;
 
 /**
  * Tier
@@ -12,18 +14,16 @@ public class Animal {
     
     private final String name;
     private final char gender;
-    private int age;
+    private final LocalDate birthday;
     private double weightInKg;
+    private final Color color;
     
-    public Animal(String name, char gender, double weightInKg) {
+    public Animal(String name, char gender, double weightInKg, LocalDate birthday, Color color) {
         this.name = name;
         this.gender = gender;
         this.weightInKg = weightInKg;
-    }
-    
-    public void getOlder(){
-        System.out.println(name + " hat Geburtstag und wird ein Jahr aelter");
-        age++;
+        this.birthday = birthday;
+        this.color = color;
     }
     
     public void eat(int valueInKg) {
@@ -44,17 +44,22 @@ public class Animal {
         return gender;
     }
     
-    public int getAge() {
-        return age;
-    }
-    
     public double getWeightInKg() {
         return weightInKg;
     }
     
+    public LocalDate getBirthday() {
+        return birthday;
+    }
+    
+    public Color getColor() {
+        return color;
+    }
+    
     public boolean equals(Animal other) {
         if(this.name.equals(other.name) && this.gender == other.gender
-          && this.age == other.age && this.weightInKg == other.weightInKg) {
+          && this.weightInKg == other.weightInKg
+          && this.birthday.equals(other.birthday) && this.color.equals(other.color) ) {
             return true;
         } else {
             return false;
@@ -63,8 +68,9 @@ public class Animal {
     
     public String toString() {
         return "Animal [name=" + name + ", gender=" + gender
-          + ", age=" + age + ", weightInKg=" + weightInKg  + "]";
-        // ab Java 24: return STR."Animal [name=\{name}, gender=\{gender}, age=\{age}, weightInKg=\{weightInKg}";
+          + ", weightInKg=" + weightInKg 
+          + ", birthday=" + birthday + ", color=" + color + "]";
+        // ab Java 24: return STR."Animal [name=\{name}, gender=\{gender}, weightInKg=\{weightInKg}, birthday=\{birthday}";
     }
 
 }

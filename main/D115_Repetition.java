@@ -9,7 +9,7 @@ import java.util.Random;
  * @author Daniel Appenmaier
  * @version 1.0
  */
-public class R01 {
+public class D115_Repetition {
 
     public static void main(String[] args) {
         
