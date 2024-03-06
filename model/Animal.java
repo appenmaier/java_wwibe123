@@ -15,7 +15,7 @@ public class Animal {
     private final String name;
     private final char gender;
     private final LocalDate birthday;
-    private double weightInKg;
+    protected double weightInKg;
     private final Color color;
     
     public Animal(String name, char gender, double weightInKg, LocalDate birthday, Color color) {
@@ -36,11 +36,11 @@ public class Animal {
         System.out.println(name + " bewegt sich");
     }
     
-    public String getName() {
+    public String name() {
         return name;
     }
     
-    public char getGender() {
+    public char gender() {
         return gender;
     }
     
@@ -48,11 +48,11 @@ public class Animal {
         return weightInKg;
     }
     
-    public LocalDate getBirthday() {
+    public LocalDate birthday() {
         return birthday;
     }
     
-    public Color getColor() {
+    public Color color() {
         return color;
     }
     
