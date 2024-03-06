@@ -8,7 +8,7 @@ import java.util.Objects;
  * @author Daniel Appenmaier 
  * @version 9.0
  */
-public final class TableLamp extends Light {
+public final class TableLamp extends Light implements WiredDevice {
 // version 8.0: public class TableLamp extends Light {
 
     /* Attribute */
@@ -58,6 +58,7 @@ public final class TableLamp extends Light {
     /**
      * Tischleuchte eingestecken
      */
+    @Override
     public void plugIn() {
         isConnected = true;
         if(isOn && lightBulb != null) {
@@ -68,6 +69,7 @@ public final class TableLamp extends Light {
     /**
      * Tischleuchte ausgestecken
      */
+    @Override
     public void pullThePlug() {
         isConnected = false;
         isShining = false;
@@ -119,17 +121,21 @@ public final class TableLamp extends Light {
     // + isOn + ", isConnected=" + isConnected + ", lightBulb.color=" + lightBulb.getColor() + "]"; }
     
     /**
-     * Prueft, ob die Tischleuchte zur eingehenden Tischleuchte gleich ist
+     * Prueft, ob die Tischleuchte zum eingehenden Objekt gleich ist
      * 
-     * @param other eingehende Tischleuchte
+     * @param other eingehendes Objekt
      * @return true = gleich, false = ungleich
      */
-    public boolean equals(TableLamp other) {
-        boolean isEqual = (other.isShining == isShining &&
-                           other.isConnected == isConnected &&
-                           other.isOn == isOn &&
-                           other.lightBulb.equals(lightBulb)) ? true : false;
-        return isEqual;
+    @Override
+    public boolean equals(Object other) {
+        if (other instanceof TableLamp t) {
+            boolean isEqual = (t.isShining == isShining &&
+                           t.isConnected == isConnected &&
+                           t.isOn == isOn &&
+                           t.lightBulb.equals(lightBulb)) ? true : false;
+            return isEqual;
+        }
+        return false;
     }
     // version 2.0: -
     
