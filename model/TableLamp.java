@@ -6,9 +6,10 @@ import java.util.Objects;
  * Tischleuchte
  * 
  * @author Daniel Appenmaier 
- * @version 8.0
+ * @version 9.0
  */
-public class TableLamp extends Light {
+public final class TableLamp extends Light {
+// version 8.0: public class TableLamp extends Light {
 
     /* Attribute */
     private boolean isConnected;

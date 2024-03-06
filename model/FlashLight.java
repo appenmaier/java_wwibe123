@@ -6,9 +6,10 @@ import java.util.ArrayList;
  * Taschenlampe
  * 
  * @author Daniel Appenmaier
- * @version 2.0
+ * @version 3.0
  */
-public class FlashLight extends Light {
+public final class FlashLight extends Light {
+// version 2.0: public class FlashLight extends Light {
     
     // version 1.0: private boolean isShining;
     // version 1.0: private boolean isOn;

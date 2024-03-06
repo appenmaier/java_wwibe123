@@ -6,22 +6,28 @@ import java.util.ArrayList;
  * Leuchte
  * 
  * @author Daniel Appenmaier
- * @version 1.0
+ * @version 2.0
  */
-public class Light {
+public abstract class Light {
+// version 1.0: public class Light {
     
     protected boolean isShining;
     protected boolean isOn;
     
-    public void switchOn() {
-        isOn = true;
-        isShining = true;
-    }
+    public abstract void switchOn();
+    // version 1.0: public void switchOn() {
+    // isOn = true;
+    // isShining = true;
+    // }
     
-    public void switchOff() {
+    public final void switchOff() {
         isOn = false;
         isShining = false;
     }
+    // version 1.0: public void switchOff() {
+    // isOn = false;
+    // isShining = false;
+    // }
     
     @Override
     public String toString() {
