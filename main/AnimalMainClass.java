@@ -12,6 +12,7 @@ import model.Fish;
 import java.util.List;
 import model.Burger;
 import model.Eatable;
+import model.Zoo;
 
 /**
  * Wiederholung: Tiere
@@ -114,6 +115,15 @@ public class AnimalMainClass {
                 f.blub();
             }
         }
+        
+        Zoo zoo = new Zoo();
+        zoo.addAnimal(fish1);
+        zoo.addAnimal(animal1);
+        zoo.addAnimal(animal2);
+        zoo.addAnimal(animal3);
+        
+        System.out.println(zoo.getHeaviestAnimal());
+        System.out.println(zoo.getFishesByColor(Color.RED));
 
     }
     
