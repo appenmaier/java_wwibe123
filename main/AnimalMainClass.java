@@ -9,6 +9,9 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import model.Dog;
 import model.Fish;
+import java.util.List;
+import model.Burger;
+import model.Eatable;
 
 /**
  * Wiederholung: Tiere
@@ -29,7 +32,7 @@ public class AnimalMainClass {
         animals.add(animal1);
         animals.add(animal2);
         animals.add(animal3);
-        animals.add(new Animal("Ingrid", 'w', 1, LocalDate.of(2023, 4, 4), Color.BROWN));
+        animals.add(new Fish("Ingrid", 'w', 1, LocalDate.of(2023, 4, 4), Color.BROWN));
         animals.add(fish1); // Upcast
         
         File myFile = new File("resources/animals.txt");
@@ -39,16 +42,24 @@ public class AnimalMainClass {
             String line = myScanner.nextLine();
             String[] tokens = line.split(";");
             
-            String name = tokens[0];
-            char gender = tokens[1].charAt(0);
-            double weightInKg = Double.parseDouble(tokens[2]); // Double.valueOf(tokens[2]);
-            int year = Integer.parseInt(tokens[3]);
-            int month = Integer.parseInt(tokens[4]);
-            int day = Integer.parseInt(tokens[5]);
+            String name = tokens[1];
+            char gender = tokens[2].charAt(0);
+            double weightInKg = Double.parseDouble(tokens[3]); // Double.valueOf(tokens[2]);
+            int year = Integer.parseInt(tokens[4]);
+            int month = Integer.parseInt(tokens[5]);
+            int day = Integer.parseInt(tokens[6]);
             LocalDate birthday = LocalDate.of(year, month, day);
-            Color color = Color.valueOf(tokens[6]);
+            Color color = Color.valueOf(tokens[7]);
             
-            Animal animal = new Animal(name, gender, weightInKg, birthday, color);
+            String animalType = tokens[0];
+            
+            Animal animal;
+            if (animalType.equals("Fisch")) {
+                animal = new Fish(name, gender, weightInKg, birthday, color); // Upcast
+            } else {
+                String breedOfDog = tokens[8];
+                animal = new Dog(name, gender, weightInKg, birthday, color, breedOfDog); // Upcast
+            }
             animals.add(animal);
         }
         
@@ -89,6 +100,18 @@ public class AnimalMainClass {
             if (animal instanceof Dog dog) { // Downcast (seit Java 16)
                 //Dog dog = (Dog) animal; // Downcast
                 dog.bark();
+            }
+        }
+        
+        /* Interfaces */
+        List<Eatable> eatables = new ArrayList<>();
+        eatables.add(fish1); // Upcast
+        eatables.add(new Burger(750));
+        
+        for (Eatable e : eatables) {
+            System.out.println(e.getCalories()); // Polymorphie
+            if (e instanceof Fish f) { // Downcast
+                f.blub();
             }
         }
 

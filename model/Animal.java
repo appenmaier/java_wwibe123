@@ -8,9 +8,9 @@ import model.Color;
  * Tier
  * 
  * @author Daniel Appenmaier
- * @version 1.0
+ * @version 2.0
  */
-public class Animal {
+public abstract class Animal {
     
     private final String name;
     private final char gender;
@@ -26,33 +26,30 @@ public class Animal {
         this.color = color;
     }
     
-    public void eat(int valueInKg) {
+    public final void eat(int valueInKg) {
         weightInKg += valueInKg;
         System.out.println(name + " frisst und wiegt nun " + weightInKg + "kg");
     }
     
-    public void move() {
-        weightInKg *= 0.9;
-        System.out.println(name + " bewegt sich");
-    }
+    public abstract void move();
     
-    public String name() {
+    public final String name() {
         return name;
     }
     
-    public char gender() {
+    public final char gender() {
         return gender;
     }
     
-    public double getWeightInKg() {
+    public final double getWeightInKg() {
         return weightInKg;
     }
     
-    public LocalDate birthday() {
+    public final LocalDate birthday() {
         return birthday;
     }
     
-    public Color color() {
+    public final Color color() {
         return color;
     }
     

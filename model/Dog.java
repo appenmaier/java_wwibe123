@@ -6,9 +6,9 @@ import java.time.LocalDate;
  * Hund
  * 
  * @author Daniel Appenmaier
- * @version 1.0
+ * @version 2.0
  */
-public class Dog extends Animal {
+public final class Dog extends Animal {
     
     private final String breedOfDog;
     
@@ -36,6 +36,12 @@ public class Dog extends Animal {
     
     public void bark() {
         System.out.println("Wuff Wuff");
+    }
+    
+    @Override
+    public void move() {
+        weightInKg *= 0.9;
+        System.out.println(name() + " läuft");
     }
 
 }
