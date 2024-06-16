@@ -1,0 +1,5 @@
+Hans;42;m
+Peter;18;m
+Lisa;33;w
+Max;16;d
+Ingrid;50;w
