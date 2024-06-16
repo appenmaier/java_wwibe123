@@ -30,7 +30,7 @@ public class R02_ObjectOrientedProgramming {
     ArrayList<Animal> animals = new ArrayList<>();
     /* version 1.0: animals.add(animal1); animals.add(animal2); animals.add(animal3); */
 
-    File myFile = new File("resources/animals_v1.txt");
+    File myFile = new File("resources/animals.txt");
     Scanner myScanner = new Scanner(myFile);
 
     while (myScanner.hasNextLine()) {

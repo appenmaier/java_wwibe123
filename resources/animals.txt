@@ -1,2 +1,2 @@
-Fisch;Heidi;w;5;2019;9;30;BLACK
-Hund;Fritz;m;20;2004;6;3;RED;Dachshund
+Heidi;w;5;2019;9;30;BLACK
+Fritz;m;20;2004;6;3;RED
