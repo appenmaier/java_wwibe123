@@ -10,11 +10,12 @@ import model.TableLamp;
  * Vererbung und Polymorphie
  *
  * @author Daniel Appenmaier
- * @version 1.0
+ * @version 2.0
  *
  */
 public class D28_InheritanceAndPolymorphism {
 
+  @SuppressWarnings("unused")
   public static void main(String[] args) {
 
     TableLamp tableLamp1 = new TableLamp();
@@ -53,7 +54,7 @@ public class D28_InheritanceAndPolymorphism {
       l.switchOn();
       if (l instanceof TableLamp) {
         TableLamp t = (TableLamp) l; // Downcast (bis Java 16)
-        t.plugIn();
+        /* version 1.0: t.plugIn(); */
       } else if (l instanceof FlashLight f) { // Downcast (seit Java 16)
         f.changeBattery(new Battery());
       }

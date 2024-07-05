@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import model.Genre;
 import model.Movie;
+import model.MovieByRatingDescendingComparator;
 
 /**
  * Komparatoren
@@ -40,7 +41,7 @@ public class D32_Comparators {
 
     Collections.sort(numbers);
     Collections.sort(names);
-    // Collections.sort(movies);
+    Collections.sort(movies);
 
     for (Integer i : numbers) {
       System.out.println(i);
@@ -48,6 +49,16 @@ public class D32_Comparators {
 
     for (String name : names) {
       System.out.println(name);
+    }
+
+    for (Movie movie : movies) {
+      System.out.println(movie);
+    }
+
+    Collections.sort(movies, new MovieByRatingDescendingComparator());
+
+    for (Movie movie : movies) {
+      System.out.println(movie);
     }
 
   }

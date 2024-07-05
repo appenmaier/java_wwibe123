@@ -6,7 +6,7 @@ import java.util.Objects;
  * Tischleuchte
  *
  * @author Daniel Appenmaier
- * @version 9.0
+ * @version 10.0
  *
  */
 public final class TableLamp extends Light implements WiredDevice {
@@ -58,14 +58,24 @@ public final class TableLamp extends Light implements WiredDevice {
 
   /**
    * Tischleuchte eingestecken
+   *
+   * @throws AlreadyPluggedInException
    */
   @Override
-  public void plugIn() {
+  public void plugIn() throws AlreadyPluggedInException {
+    if (isConnected) {
+      throw new AlreadyPluggedInException();
+    }
+
     isConnected = true;
     if (isOn && lightBulb != null) {
       isShining = true;
     }
   }
+  /*
+   * version 9.0: public void plugIn() { isConnected = true; if (isOn && lightBulb != null) {
+   * isShining = true; } }
+   */
 
   /**
    * Tischleuchte ausgestecken

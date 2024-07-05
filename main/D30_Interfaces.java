@@ -9,7 +9,7 @@ import model.WiredDevice;
  * Schnittstellen (Interfaces)
  *
  * @author Daniel Appenmaier
- * @version 1.0
+ * @version 2.0
  *
  */
 public class D30_Interfaces {
@@ -23,7 +23,8 @@ public class D30_Interfaces {
     wiredDevices.add(new Toaster()); // Upcast
 
     for (WiredDevice d : wiredDevices) {
-      d.plugIn(); // Polymorphie
+      /* version 1.0: d.plugIn(); */
+      // Polymorphie
 
       if (d instanceof TableLamp t) { // Downcast
         t.switchOn();

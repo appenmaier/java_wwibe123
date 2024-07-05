@@ -10,6 +10,11 @@ import java.util.List;
  *
  */
 public record Movie(String title, List<Genre> genres, String publishingYear, int runtimeInMinutes,
-    double rating, int numberOfVotes) {
+    double rating, int numberOfVotes) implements Comparable<Movie> {
+
+  @Override
+  public int compareTo(Movie otherMovie) {
+    return title.compareTo(otherMovie.title);
+  }
 
 }

@@ -8,7 +8,7 @@ import model.TableLamp;
  * Konstruktoren und Ueberladene Methoden
  *
  * @author Daniel Appenmaier
- * @version 1.0
+ * @version 2.0
  *
  */
 public class D22_ConstructorsAndOverloadedMethods {
@@ -30,7 +30,7 @@ public class D22_ConstructorsAndOverloadedMethods {
 
     for (int i = 0; i < tableLamps.size(); i++) {
       TableLamp lamp = tableLamps.get(i);
-      lamp.plugIn();
+      /* version 1.0: lamp.plugIn(); */
       lamp.switchOn();
       System.out.println(lamp);
     }

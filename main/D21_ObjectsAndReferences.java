@@ -7,7 +7,7 @@ import model.TableLamp;
  * Objekte und Referenzen
  *
  * @author Daniel Appenmaier
- * @version 2.0
+ * @version 3.0
  *
  */
 public class D21_ObjectsAndReferences {
@@ -25,7 +25,7 @@ public class D21_ObjectsAndReferences {
     l1.changeLightBulb(redLightBulb);
 
     i = 7;
-    l1.plugIn();
+    /* version 2.0: l1.plugIn(); */
     l1.switchOn();
 
     System.out.println("i: " + i);
@@ -40,7 +40,7 @@ public class D21_ObjectsAndReferences {
     LightBulb redLightBulb2 = new LightBulb("rot");
     // version 1.0: LightBulb redLightBulb2 = new LightBulb(); redLightBulb2.setColor("rot");
     l3.changeLightBulb(redLightBulb2);
-    l3.plugIn();
+    /* version 2.0: l3.plugIn(); */
     l3.switchOn();
 
     /*

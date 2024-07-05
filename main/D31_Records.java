@@ -20,8 +20,13 @@ public class D31_Records {
     Movie movie2 = new Movie("John Wick 4", List.of(Genre.ACTION, Genre.CRIME, Genre.THRILLER),
         "2023", 169, 7.8, 241552);
 
+    System.out.println(movie1.title());
+
     System.out.println(movie1);
     System.out.println(movie2);
+
+    System.out.println(movie1.hashCode());
+    System.out.println(movie2.hashCode());
 
     if (movie1 == movie2) {
       System.out.println("Die Filme sind identisch");
