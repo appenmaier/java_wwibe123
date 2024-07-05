@@ -1,5 +1,6 @@
 package model;
 
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -15,6 +16,15 @@ public record Movie(String title, List<Genre> genres, String publishingYear, int
   @Override
   public int compareTo(Movie otherMovie) {
     return title.compareTo(otherMovie.title);
+  }
+
+  public static class MovieByPublishingYearDescendingComparator implements Comparator<Movie> {
+
+    @Override
+    public int compare(Movie movie1, Movie movie2) {
+      return movie2.publishingYear.compareTo(movie1.publishingYear);
+    }
+
   }
 
 }

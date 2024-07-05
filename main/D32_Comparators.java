@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import model.Genre;
 import model.Movie;
+import model.Movie.MovieByPublishingYearDescendingComparator;
 import model.MovieByRatingDescendingComparator;
 
 /**
@@ -54,9 +55,15 @@ public class D32_Comparators {
     for (Movie movie : movies) {
       System.out.println(movie);
     }
+    System.out.println();
 
     Collections.sort(movies, new MovieByRatingDescendingComparator());
+    for (Movie movie : movies) {
+      System.out.println(movie);
+    }
+    System.out.println();
 
+    Collections.sort(movies, new MovieByPublishingYearDescendingComparator());
     for (Movie movie : movies) {
       System.out.println(movie);
     }
