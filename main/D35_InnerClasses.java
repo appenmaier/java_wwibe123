@@ -128,7 +128,6 @@ public class D35_InnerClasses {
 
   private static void printMoviesByMethodReference() {
     movies.forEach(System.out::println);
-    // movies.forEach(Movie::title);
   }
 
 }
