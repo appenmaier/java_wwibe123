@@ -6,7 +6,6 @@ ausführbare Klasse.
 ```mermaid
 classDiagram
     FastFood o-- FastFoodCategory
-    Shop~T extends Comparable<T>~ o-- FastFood
     Comparable~T~ <|.. FastFood: implements
     InvalidRatingException <.. Shop~T extends Comparable<T>~: throws
     NoProductFoundException <.. Shop~T extends Comparable<T>~: throws
@@ -31,7 +30,7 @@ classDiagram
     class Shop~T extends Comparable<T>~ {
         <<record>>
         name: String
-        products: Map~T, List~Integer~~
+        products: Map~T&sbquo; List~Integer~~
         +addProduct(product: T) void
         +rateProduct(product: T, rating: int) void
         +getBestRatedProduct() Optional~T~
@@ -62,12 +61,12 @@ classDiagram
 
 ## Hinweis zur Klasse _FastFood_
 
-Die Methode `int compareTo(otherFastFood: FastFood)` soll so implementiert warden, dass damit FastFood absteigend nach den Kalorien sortiert warden kann.
+Die Methode `int compareTo(otherFastFood: FastFood)` soll so implementiert werden, dass damit Fast-Food absteigend nach den Kalorien sortiert werden kann.
 
 ## Hinweise zur Klasse _Shop_
 
 - Die Methode `void addProduct(product: T)` soll das eingehende Produkt zum Sortiment hinzufügen
-- Die Methode `void rateProduct(product: T, rating: int)` soll dem eingehenden Produkt die eingehende Bewertung hinzufügen. Für den Fall, dass das eingehende Produkt nicht im Sortiment vorhanden ist, soll die Ausnahme `NoProductFoundException` ausgelöst warden und für den Fall, dass die eingehende Bewertung nicht im Bereich 1 bis 5 liegt, soll die Ausnahme `InvalidRatingException` ausgelöst werden 
-- Die Methode `Optional~T~ getBestRatedProduct()` soll das Produkt mit der höchsten
+- Die Methode `void rateProduct(product: T, rating: int)` soll dem eingehenden Produkt die eingehende Bewertung hinzufügen. Für den Fall, dass das eingehende Produkt nicht im Sortiment vorhanden ist, soll die Ausnahme `NoProductFoundException` ausgelöst werden und für den Fall, dass die eingehende Bewertung nicht im Bereich 1 bis 5 liegt, soll die Ausnahme `InvalidRatingException` ausgelöst werden 
+- Die Methode `Optional<T> getBestRatedProduct()` soll das Produkt mit der höchsten
   Bewertung als Optional zurückgeben
 - Die Methode `List<T> getAllProductsSortedByNaturalOrdering()` soll alle Produkte sortiert nach ihrer natürlichen Ordnung zurückgeben
