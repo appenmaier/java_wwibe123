@@ -69,7 +69,8 @@ werden, dass damit Fast-Food absteigend nach den Kalorien sortiert werden kann.
 - Das Sortiment des Shops (Attribut `assortment`) setzt sich auch Produkten und
   ihren Bewertungen zusammen
 - Die Methode `void addProduct(product: T)` soll das eingehende Produkt zum
-  Sortiment hinzufügen
+  Sortiment hinzufügen, allerdings nur für den Fall, dass das eingehende Produkt
+  im Sortiment noch nicht vorhanden ist
 - Die Methode `void rateProduct(product: T, rating: int)` soll dem eingehenden
   Produkt die eingehende Bewertung hinzufügen. Für den Fall, dass das eingehende
   Produkt nicht im Sortiment vorhanden ist, soll die Ausnahme
@@ -77,7 +78,7 @@ werden, dass damit Fast-Food absteigend nach den Kalorien sortiert werden kann.
   eingehende Bewertung nicht im Bereich 1 bis 5 liegt, soll die Ausnahme
   `InvalidRatingException` ausgelöst werden
 - Die Methode `Optional<T> getBestRatedProduct()` soll das Produkt mit der
-  höchsten Bewertung als Optional zurückgeben
+  höchsten Durchschnittsbewertung als Optional zurückgeben
 - Die Methode `List<T> getAllProductsSortedByNaturalOrdering()` soll alle
   Produkte sortiert nach ihrer natürlichen Ordnung zurückgeben
 

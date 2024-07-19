@@ -8,7 +8,7 @@ import model.Fish;
 import model.Zoo;
 
 /**
- * Wiederholung: Schnittstellen (Interfaces)
+ * Klausurvorbereitung: Zoo
  *
  * @author Daniel Appenmaier
  * @version 1.0
