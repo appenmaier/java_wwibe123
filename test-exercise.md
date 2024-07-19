@@ -7,8 +7,8 @@ ausführbare Klasse.
 classDiagram
     FastFood o-- FastFoodCategory
     Comparable~T~ <|.. FastFood: implements
-    InvalidRatingException <.. Shop~T extends Comparable<T>~: throws
-    NoProductFoundException <.. Shop~T extends Comparable<T>~: throws
+    InvalidRatingException <.. Shop~T extends Comparable&#60T&#62~: throws
+    NoProductFoundException <.. Shop~T extends Comparable&#60T&#62~: throws
 
     class FastFoodCategory {
         <<enumeration>>
@@ -27,7 +27,7 @@ classDiagram
         +compareTo(otherFastFood: FastFood) int
     }
 
-    class Shop~T extends Comparable<T>~ {
+    class Shop~T extends Comparable&#60T&#62~ {
         <<record>>
         name: String
         assortment: Map~T&sbquo; List~Integer~~
