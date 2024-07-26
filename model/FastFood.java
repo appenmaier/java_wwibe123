@@ -15,10 +15,11 @@ public record FastFood(String name, FastFoodCategory fastFoodCategory, double ca
     // Double otherCalorificValueInKcal = otherFastFood.calorificValueInKcal; // 0,5
     // return otherCalorificValueInKcal.compareTo(calorificValueInKcal); // 1 - 1,5
 
-    // return Double.valueOf(otherFastFood.calorificValueInKcal).compareTo(calorificValueInKcal);
+    // return Double.valueOf(otherFastFood.calorificValueInKcal).compareTo(calorificValueInKcal); //
+    // 1,5 - 2
 
-    return Double.compare(otherFastFood.calorificValueInKcal, calorificValueInKcal);
-  }
+    return Double.compare(otherFastFood.calorificValueInKcal, calorificValueInKcal); // 1,5 - 2
+  } // 2 - 2,5
 
 }
 // 3,5 - 4,5

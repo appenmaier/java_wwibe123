@@ -1,10 +1,11 @@
 package main;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.HashMap;
 import model.FastFood;
 import model.FastFoodCategory;
+import model.InvalidRatingException;
+import model.NoProductFoundException;
+import model.Shop;
 
 /**
  * Klausurvorbereitung: Fast-Food
@@ -17,15 +18,26 @@ public class T03_FastFood {
 
   public static void main(String[] args) {
 
-    List<FastFood> fastFood = new ArrayList<>();
+    Shop<FastFood> fastFoodShop = new Shop<FastFood>("Burger King", new HashMap<>());
 
-    fastFood.add(new FastFood("Hamburger", FastFoodCategory.BURGER, 259, false));
-    fastFood.add(new FastFood("Pommes klein", FastFoodCategory.FRIES, 231, true));
-    fastFood.add(new FastFood("Pizza Margherita", FastFoodCategory.PIZZA, 840, true));
+    fastFoodShop.addProduct(new FastFood("Hamburger", FastFoodCategory.BURGER, 259, false));
+    fastFoodShop.addProduct(new FastFood("Pommes klein", FastFoodCategory.FRIES, 231, true));
+    fastFoodShop.addProduct(new FastFood("Pizza Margherita", FastFoodCategory.PIZZA, 840, true));
 
-    Collections.sort(fastFood);
+    try {
+      fastFoodShop.rateProduct(new FastFood("Hamburger", FastFoodCategory.BURGER, 259, false), 3);
+      fastFoodShop.rateProduct(new FastFood("Hamburger", FastFoodCategory.BURGER, 259, false), 3);
+      fastFoodShop.rateProduct(new FastFood("Hamburger", FastFoodCategory.BURGER, 259, false), 1);
+      fastFoodShop.rateProduct(new FastFood("Hamburger", FastFoodCategory.BURGER, 259, false), 5);
+      fastFoodShop.rateProduct(new FastFood("Pommes klein", FastFoodCategory.FRIES, 231, true), 5);
+    } catch (NoProductFoundException e) {
+      e.printStackTrace();
+    } catch (InvalidRatingException e) {
+      System.out.println(e.getMessage());
+    }
 
-    fastFood.forEach(System.out::println);
+    fastFoodShop.getBestRatedProduct().ifPresent(System.out::println);
+    fastFoodShop.getAllProductsSortedByNaturalOrdering().forEach(System.out::println);
 
   }
 
