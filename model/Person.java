@@ -1,12 +1,19 @@
 package model;
 
+import lombok.EqualsAndHashCode;
+import lombok.Setter;
+import lombok.ToString;
+
 /**
  * Person
  *
  * @author Daniel Appenmaier
- * @version 1.0
+ * @version 2.0
  *
  */
+@EqualsAndHashCode
+@ToString
+@Setter
 public class Person {
 
   private final String name;
