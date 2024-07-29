@@ -40,9 +40,12 @@ public class D40_JavaStreamAPI {
     }
 
     /* Funktionale Lösung */
-    List<String> names2 =
-        persons.stream().filter(p -> p.getGender() == 'w').filter(p -> p.getAge() > 17)
-            .map(p -> p.getName().toUpperCase()).sorted((n1, n2) -> n2.compareTo(n1)).toList();
+    List<String> names2 = persons.stream()
+        .filter(p -> p.getGender() == 'w')
+        .filter(p -> p.getAge() > 17)
+        .map(p -> p.getName().toUpperCase())
+        .sorted((n1, n2) -> n2.compareTo(n1))
+        .toList();
 
     names2.forEach(System.out::println);
 
