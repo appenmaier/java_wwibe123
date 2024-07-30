@@ -12,9 +12,19 @@ import java.util.Objects;
 public final class TableLamp extends Light implements WiredDevice {
   // version 8.0: public class TableLamp extends Light {
 
+  public final static String TYPE = "Tischleuchte";
+  private static int numberOfTableLamps;
+
+  // version 4.0: -
+  public static int getNumberOfTableLamps() {
+    return numberOfTableLamps;
+  }
+  // version 4.0: -
+
   /* Attribute */
   private boolean isConnected;
   private LightBulb lightBulb;
+
   // version 1.0: public boolean isShining;
   // version 1.0: public boolean isConnected;
   // version 1.0: public boolean isOn;
@@ -24,20 +34,9 @@ public final class TableLamp extends Light implements WiredDevice {
   private PlugType plugType;
   // version 5.0: -
 
-  public final static String TYPE = "Tischleuchte";
-  private static int numberOfTableLamps;
-  // version 4.0: -
-
   /* Methoden */
   public TableLamp() {
     lightBulb = new LightBulb();
-    plugType = PlugType.TYPE_F;
-    numberOfTableLamps++;
-  }
-  // version 3.0: -
-
-  public TableLamp(String lightBulbColor) {
-    lightBulb = new LightBulb(lightBulbColor);
     plugType = PlugType.TYPE_F;
     numberOfTableLamps++;
   }
@@ -55,6 +54,59 @@ public final class TableLamp extends Light implements WiredDevice {
     this.plugType = plugType;
   }
   // version 5.0: -
+
+  public TableLamp(String lightBulbColor) {
+    lightBulb = new LightBulb(lightBulbColor);
+    plugType = PlugType.TYPE_F;
+    numberOfTableLamps++;
+  }
+  // version 3.0: -
+
+  /**
+   * Gluehbirne wechseln
+   *
+   * @param newLightBulb neue Gluehbirne
+   * @return alte Gluehbirne
+   */
+  public LightBulb changeLightBulb(LightBulb newLightBulb) {
+    LightBulb oldLightBulb = lightBulb;
+    lightBulb = newLightBulb;
+    return oldLightBulb;
+  }
+
+  /**
+   * Prueft, ob die Tischleuchte zum eingehenden Objekt gleich ist
+   *
+   * @param other eingehendes Objekt
+   * @return true = gleich, false = ungleich
+   */
+  @Override
+  public boolean equals(Object other) {
+    if (other instanceof TableLamp t) {
+      boolean isEqual = (t.isShining == isShining && t.isConnected == isConnected && t.isOn == isOn
+          && t.lightBulb.equals(lightBulb)) ? true : false;
+      return isEqual;
+    }
+    return false;
+  }
+  // version 2.0: -
+
+  // version 6.0:
+  // public void switchOff() {
+  // isOn = false;
+  // isShining = false;
+  // }
+
+  public PlugType getPlugType() {
+    return plugType;
+  }
+  // version 5.0: -
+
+  @Override
+  public int hashCode() {
+    return Objects.hash(isOn, isShining, isConnected);
+  }
+  // version 7.0: -
 
   /**
    * Tischleuchte eingestecken
@@ -97,24 +149,6 @@ public final class TableLamp extends Light implements WiredDevice {
     }
   }
 
-  // version 6.0:
-  // public void switchOff() {
-  // isOn = false;
-  // isShining = false;
-  // }
-
-  /**
-   * Gluehbirne wechseln
-   *
-   * @param newLightBulb neue Gluehbirne
-   * @return alte Gluehbirne
-   */
-  public LightBulb changeLightBulb(LightBulb newLightBulb) {
-    LightBulb oldLightBulb = lightBulb;
-    lightBulb = newLightBulb;
-    return oldLightBulb;
-  }
-
   /**
    * Gibt alle Attribute der Tischleuchte als Zeichenkette zurueck
    *
@@ -128,38 +162,5 @@ public final class TableLamp extends Light implements WiredDevice {
   // version 2.0: public String toString() {
   // return "TableLamp [isShining=" + isShining + ", isOn="
   // + isOn + ", isConnected=" + isConnected + ", lightBulb.color=" + lightBulb.getColor() + "]"; }
-
-  /**
-   * Prueft, ob die Tischleuchte zum eingehenden Objekt gleich ist
-   *
-   * @param other eingehendes Objekt
-   * @return true = gleich, false = ungleich
-   */
-  @Override
-  public boolean equals(Object other) {
-    if (other instanceof TableLamp t) {
-      boolean isEqual = (t.isShining == isShining && t.isConnected == isConnected && t.isOn == isOn
-          && t.lightBulb.equals(lightBulb)) ? true : false;
-      return isEqual;
-    }
-    return false;
-  }
-  // version 2.0: -
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(isOn, isShining, isConnected);
-  }
-  // version 7.0: -
-
-  public static int getNumberOfTableLamps() {
-    return numberOfTableLamps;
-  }
-  // version 4.0: -
-
-  public PlugType getPlugType() {
-    return plugType;
-  }
-  // version 5.0: -
 
 }

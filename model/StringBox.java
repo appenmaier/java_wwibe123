@@ -16,12 +16,12 @@ public class StringBox {
     return contentA;
   }
 
-  public void setContentA(String contentA) {
-    this.contentA = contentA;
-  }
-
   public String getContentB() {
     return contentB;
+  }
+
+  public void setContentA(String contentA) {
+    this.contentA = contentA;
   }
 
   public void setContentB(String contentB) {

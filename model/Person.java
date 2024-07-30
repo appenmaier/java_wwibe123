@@ -26,16 +26,16 @@ public class Person {
     this.age = age;
   }
 
-  public String getName() {
-    return name;
+  public int getAge() {
+    return age;
   }
 
   public char getGender() {
     return gender;
   }
 
-  public int getAge() {
-    return age;
+  public String getName() {
+    return name;
   }
 
 }

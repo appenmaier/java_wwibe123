@@ -12,24 +12,24 @@ public class Box<T, U extends Number> {
   private T contentA;
   private U contentB;
 
-  public T getContentA() {
-    return contentA;
+  public void doSomething() {
+    System.out.println(contentB.byteValue());
   }
 
-  public void setContentA(T contentA) {
-    this.contentA = contentA;
+  public T getContentA() {
+    return contentA;
   }
 
   public U getContentB() {
     return contentB;
   }
 
-  public void setContentB(U contentB) {
-    this.contentB = contentB;
+  public void setContentA(T contentA) {
+    this.contentA = contentA;
   }
 
-  public void doSomething() {
-    System.out.println(contentB.byteValue());
+  public void setContentB(U contentB) {
+    this.contentB = contentB;
   }
 
 }

@@ -16,12 +16,12 @@ public class IntegerBox {
     return contentA;
   }
 
-  public void setContentA(Integer contentA) {
-    this.contentA = contentA;
-  }
-
   public Integer getContentB() {
     return contentB;
+  }
+
+  public void setContentA(Integer contentA) {
+    this.contentA = contentA;
   }
 
   public void setContentB(Integer contentB) {

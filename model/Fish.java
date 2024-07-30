@@ -20,8 +20,8 @@ public final class Fish extends Animal implements Eatable {
   }
 
   @Override
-  public String toString() {
-    return "Ich bin ein Fisch";
+  public double getCalories() {
+    return weightInKg * 10;
   }
 
   @Override
@@ -31,8 +31,8 @@ public final class Fish extends Animal implements Eatable {
   }
 
   @Override
-  public double getCalories() {
-    return weightInKg * 10;
+  public String toString() {
+    return "Ich bin ein Fisch";
   }
 
 }

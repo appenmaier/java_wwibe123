@@ -25,31 +25,17 @@ public abstract class Animal {
     this.color = color;
   }
 
-  public final void eat(int valueInKg) {
-    weightInKg += valueInKg;
-    System.out.println(name + " frisst und wiegt nun " + weightInKg + "kg");
-  }
-
-  public abstract void move();
-
-  public final String name() {
-    return name;
-  }
-
-  public final char gender() {
-    return gender;
-  }
-
-  public final double getWeightInKg() {
-    return weightInKg;
-  }
-
   public final LocalDate birthday() {
     return birthday;
   }
 
   public final Color color() {
     return color;
+  }
+
+  public final void eat(int valueInKg) {
+    weightInKg += valueInKg;
+    System.out.println(name + " frisst und wiegt nun " + weightInKg + "kg");
   }
 
   public boolean equals(Animal other) {
@@ -60,6 +46,20 @@ public abstract class Animal {
     } else {
       return false;
     }
+  }
+
+  public final char gender() {
+    return gender;
+  }
+
+  public final double getWeightInKg() {
+    return weightInKg;
+  }
+
+  public abstract void move();
+
+  public final String name() {
+    return name;
   }
 
   @Override

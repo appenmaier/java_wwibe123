@@ -19,17 +19,33 @@ public class Student implements Comparable<Student> {
     this.fullName = fullName;
   }
 
-  public String getMatriculationNumber() {
-    return matriculationNumber;
+  @Override
+  public int compareTo(Student otherStudent) {
+    return matriculationNumber.compareTo(otherStudent.matriculationNumber);
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    Student other = (Student) obj;
+    return Objects.equals(fullName, other.fullName)
+        && Objects.equals(matriculationNumber, other.matriculationNumber);
   }
 
   public String getFullName() {
     return fullName;
   }
 
-  @Override
-  public String toString() {
-    return "Student [matriculationNumber=" + matriculationNumber + ", fullName=" + fullName + "]";
+  public String getMatriculationNumber() {
+    return matriculationNumber;
   }
 
   @Override
@@ -38,20 +54,8 @@ public class Student implements Comparable<Student> {
   }
 
   @Override
-  public boolean equals(Object obj) {
-    if (this == obj)
-      return true;
-    if (obj == null)
-      return false;
-    if (getClass() != obj.getClass())
-      return false;
-    Student other = (Student) obj;
-    return Objects.equals(fullName, other.fullName)
-        && Objects.equals(matriculationNumber, other.matriculationNumber);
-  }
-
-  public int compareTo(Student otherStudent) {
-    return matriculationNumber.compareTo(otherStudent.matriculationNumber);
+  public String toString() {
+    return "Student [matriculationNumber=" + matriculationNumber + ", fullName=" + fullName + "]";
   }
 
 }

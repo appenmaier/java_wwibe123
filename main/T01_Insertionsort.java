@@ -14,18 +14,6 @@ public class T01_Insertionsort {
   private static int counter;
   private static int[] data;
 
-  public static void main(String[] args) {
-    data = new int[1_000_000];
-
-    Random random = new Random();
-    for (int i = 0; i < 1_000_000; i++) {
-      int randomNumber = random.nextInt(1, 101);
-      data[i] = randomNumber;
-    }
-
-    T01_Insertionsort.insertSort();
-  }
-
   private static void insertSort() {
     int tmp = 0;
     int i = 1;
@@ -41,6 +29,18 @@ public class T01_Insertionsort {
       T01_Insertionsort.print();
       i++;
     }
+  }
+
+  public static void main(String[] args) {
+    data = new int[1_000_000];
+
+    Random random = new Random();
+    for (int i = 0; i < 1_000_000; i++) {
+      int randomNumber = random.nextInt(1, 101);
+      data[i] = randomNumber;
+    }
+
+    T01_Insertionsort.insertSort();
   }
 
   private static void print() {

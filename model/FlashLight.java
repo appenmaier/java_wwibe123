@@ -14,13 +14,8 @@ public final class FlashLight extends Light {
   // version 1.0: private boolean isOn;
   private Battery battery;
 
-  @Override
-  public void switchOn() {
-    isOn = true;
-    if (battery != null && battery.getEnergyLevel() > 0) {
-      isShining = true;
-      battery.decreaseEnergyLevel();
-    }
+  public void changeBattery(Battery battery) {
+    this.battery = battery;
   }
 
   // version 1.0: public void switchOff() {
@@ -28,8 +23,13 @@ public final class FlashLight extends Light {
   // isShining = false;
   // }
 
-  public void changeBattery(Battery battery) {
-    this.battery = battery;
+  @Override
+  public void switchOn() {
+    isOn = true;
+    if (battery != null && battery.getEnergyLevel() > 0) {
+      isShining = true;
+      battery.decreaseEnergyLevel();
+    }
   }
 
   @Override

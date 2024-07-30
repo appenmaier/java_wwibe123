@@ -12,16 +12,6 @@ import java.util.List;
  */
 public class Order {
 
-  private List<OrderItem> items;
-
-  public Order() {
-    items = new ArrayList<>();
-  }
-
-  public List<OrderItem> items() {
-    return items;
-  }
-
   /**
    * Auftragsposition
    *
@@ -31,6 +21,16 @@ public class Order {
    */
   public class OrderItem {
 
+  }
+
+  private List<OrderItem> items;
+
+  public Order() {
+    items = new ArrayList<>();
+  }
+
+  public List<OrderItem> items() {
+    return items;
   }
 
 }

@@ -14,6 +14,11 @@ public class LightBulb {
   // version 1.0: public String color;
   // version 3.0: private String color;
 
+  public LightBulb() {
+    color = "weiss";
+  }
+  // version 3.0: -
+
   /* Methoden */
   public LightBulb(String color) {
     this.color = color;
@@ -21,10 +26,11 @@ public class LightBulb {
   // version 3.0: public void setColor(String c) { color = c; }
   // version 1.0: - */
 
-  public LightBulb() {
-    color = "weiss";
+  public boolean equals(LightBulb other) {
+    boolean isEqual = (other.color == color) ? true : false;
+    return isEqual;
   }
-  // version 3.0: -
+  // version 2.0: -
 
   public String getColor() {
     return color;
@@ -34,12 +40,6 @@ public class LightBulb {
   @Override
   public String toString() {
     return "LightBulb [color=" + color + "]";
-  }
-  // version 2.0: -
-
-  public boolean equals(LightBulb other) {
-    boolean isEqual = (other.color == color) ? true : false;
-    return isEqual;
   }
   // version 2.0: -
 

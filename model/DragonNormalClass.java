@@ -20,12 +20,23 @@ public class DragonNormalClass {
     this.age = age;
   }
 
-  public int getAge() {
-    return age;
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    DragonNormalClass other = (DragonNormalClass) obj;
+    return age == other.age && Objects.equals(name, other.name);
   }
 
-  public void setAge(int age) {
-    this.age = age;
+  public int getAge() {
+    return age;
   }
 
   public String getName() {
@@ -37,16 +48,8 @@ public class DragonNormalClass {
     return Objects.hash(age, name);
   }
 
-  @Override
-  public boolean equals(Object obj) {
-    if (this == obj)
-      return true;
-    if (obj == null)
-      return false;
-    if (getClass() != obj.getClass())
-      return false;
-    DragonNormalClass other = (DragonNormalClass) obj;
-    return age == other.age && Objects.equals(name, other.name);
+  public void setAge(int age) {
+    this.age = age;
   }
 
   @Override

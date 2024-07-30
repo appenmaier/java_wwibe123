@@ -19,12 +19,24 @@ public class Exam {
     this.grade = grade;
   }
 
-  public double getGrade() {
-    return grade;
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    Exam other = (Exam) obj;
+    return Double.doubleToLongBits(grade) == Double.doubleToLongBits(other.grade)
+        && Objects.equals(lecture, other.lecture);
   }
 
-  public void setGrade(double grade) {
-    this.grade = grade;
+  public double getGrade() {
+    return grade;
   }
 
   public String getLecture() {
@@ -32,26 +44,17 @@ public class Exam {
   }
 
   @Override
-  public String toString() {
-    return "Exam [lecture=" + lecture + ", grade=" + grade + "]";
-  }
-
-  @Override
   public int hashCode() {
     return Objects.hash(grade, lecture);
   }
 
+  public void setGrade(double grade) {
+    this.grade = grade;
+  }
+
   @Override
-  public boolean equals(Object obj) {
-    if (this == obj)
-      return true;
-    if (obj == null)
-      return false;
-    if (getClass() != obj.getClass())
-      return false;
-    Exam other = (Exam) obj;
-    return Double.doubleToLongBits(grade) == Double.doubleToLongBits(other.grade)
-        && Objects.equals(lecture, other.lecture);
+  public String toString() {
+    return "Exam [lecture=" + lecture + ", grade=" + grade + "]";
   }
 
 }

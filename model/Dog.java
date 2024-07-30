@@ -19,6 +19,10 @@ public final class Dog extends Animal {
     this.breedOfDog = breedOfDog;
   }
 
+  public void bark() {
+    System.out.println("Wuff Wuff");
+  }
+
   public String breedOfDog() {
     return breedOfDog;
   }
@@ -29,19 +33,15 @@ public final class Dog extends Animal {
   }
 
   @Override
-  public String toString() {
-    return "Dog [name=" + name() + ", gender=" + gender() + ", weightInKg=" + getWeightInKg()
-        + ", birthday=" + birthday() + ", color=" + color() + ", breedOfDog=" + breedOfDog + "]";
-  }
-
-  public void bark() {
-    System.out.println("Wuff Wuff");
-  }
-
-  @Override
   public void move() {
     weightInKg *= 0.9;
     System.out.println(name() + " läuft");
+  }
+
+  @Override
+  public String toString() {
+    return "Dog [name=" + name() + ", gender=" + gender() + ", weightInKg=" + getWeightInKg()
+        + ", birthday=" + birthday() + ", color=" + color() + ", breedOfDog=" + breedOfDog + "]";
   }
 
 }
