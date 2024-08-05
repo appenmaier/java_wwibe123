@@ -23,7 +23,8 @@ public class D40_JavaStreamAPI {
     List<String> names = new ArrayList<>();
     for (Person p : persons) {
       if (p.getGender() == 'w' && p.getAge() > 17) {
-        String name = p.getName().toUpperCase();
+        String name = p.getName()
+            .toUpperCase();
         names.add(name);
       }
     }
@@ -43,7 +44,8 @@ public class D40_JavaStreamAPI {
     List<String> names2 = persons.stream()
         .filter(p -> p.getGender() == 'w')
         .filter(p -> p.getAge() > 17)
-        .map(p -> p.getName().toUpperCase())
+        .map(p -> p.getName()
+            .toUpperCase())
         .sorted((n1, n2) -> n2.compareTo(n1))
         .toList();
 
