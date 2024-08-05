@@ -9,6 +9,21 @@ package model;
  */
 public enum Genre {
 
-  ACTION, DRAMA, THRILLER, COMEDY, ANIMATION, HORROR, ADVENTURE, SCIENCE_FICTION, CRIME;
+  ACTION("Action"), ADVENTURE("Adventure"), ANIMATION("Animation"), BIOGRAPHY("Biography"),
+  COMEDY("Comedy"), CRIME("Crime"), DOCUMENTARY("Documentary"), DRAMA("Drama"), FAMILY("Family"),
+  FANTASY("Fantasy"), FILM_NOIR("Film Noir"), HISTORY("History"), HORROR("Horror"), MUSIC("Music"),
+  MUSICAL("Musical"), MYSTERY("Mystery"), NEWS("News"), ROMANCE("Romance"),
+  SCIENCE_FICTION("Science Fiction"), SPORT("Sport"), THRILLER("Thriller"), WAR("War"),
+  WESTERN("Western");
+
+  private String name;
+
+  Genre(String name) {
+    this.name = name;
+  }
+
+  public String getName() {
+    return name;
+  }
 
 }
