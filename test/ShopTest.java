@@ -13,6 +13,13 @@ import model.InvalidRatingException;
 import model.NoProductFoundException;
 import model.Shop;
 
+/**
+ * ShopTest
+ *
+ * @author Daniel Appenmaier
+ * @version 1.0
+ *
+ */
 public class ShopTest {
 
   Shop<FastFood> shop;
