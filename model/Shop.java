@@ -44,11 +44,16 @@ public record Shop<T extends Comparable<T>>(String name, Map<T, List<Integer>> a
     for (Entry<T, List<Integer>> entry : assortment.entrySet()) { // 1
       List<Integer> ratings = entry.getValue(); // 1
 
-      double total = 0; // 0,5
-      for (int rating : ratings) { // 1
-        total += rating; // 0,5 - 1
-      }
-      double averageRating = total / ratings.size(); // 1 - 1,5
+      // double total = 0; // 0,5
+      // for (int rating : ratings) { // 1
+      // total += rating; // 0,5 - 1
+      // }
+      // double averageRating = total / ratings.size(); // 1 - 1,5
+
+      double averageRating = ratings.stream()
+          .mapToInt(value -> value)
+          .average()
+          .getAsDouble(); // 3 - 4
 
       if (averageRating > bestAverageRating) { // 1
         bestRatedProduct = entry.getKey(); // 1
